@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * Brainstorma Start
- * main - prints the phrase \"Programming is like building a multilingual puzzle
+ * main - prints the phrase \"Programming is like building a multilingual...
+ * Challenge: !printf
  * Return: 0 if success
  */
 
