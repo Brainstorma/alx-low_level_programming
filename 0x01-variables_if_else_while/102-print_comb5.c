@@ -4,32 +4,32 @@
 #include <unistd.h>
 
 /**
- * main - prints all possible combinations of two two-digit numbers
- * Challenge: You can only use putchar 6 times in your code & asc order & smallest of three
+ * main - prints all possible combinations of 2.2 digits
+ * Challenge: You can only use putchar 6 times in your co...
  * Return: 0 if result is as expected else !0
  */
 
 int main(void)
 {
-	int c, i, k, j;
+	int dv, i, dd, dw;
 
-	for (c = 48; c <= 57; c++)
+	for (dv = 48; dv <= 57; dv++)
 	{
 		for (i = 48; i <= 57; i++)
 		{
-			for (k = 48; k <= 57; k++)
+			for (dd = 48; dd <= 57; dd++)
 			{
-				for (j = 48; j <= 57; j++)
+				for (dw = 48; dw <= 57; dw++)
 				{
-				if (((k + j) > (c + i) &&  k >= c) || c < k)
+				if (((dd + dw) > (dv + i) &&  dd >= dv) || dv < dd)
 				{
-					putchar(c);
+					putchar(dv);
 					putchar(i);
 					putchar(' ');
-					putchar(k);
-					putchar(j);
+					putchar(dd);
+					putchar(dw);
 
-					if (c + i + k + j == 227 && c == 57)
+					if (dv + i + dd + dw == 227 && dv == 57)
 					{
 					break;
 					}

@@ -15,7 +15,7 @@ int main(void)
 
 	for (sd = 0; sd < 10; sd++)
 	{
-		putchar(sd+'0');
+		putchar(sd + '0');
 	}
 	putchar('\n');
 	return (0);

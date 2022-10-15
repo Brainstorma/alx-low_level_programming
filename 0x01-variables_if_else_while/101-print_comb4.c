@@ -4,8 +4,8 @@
 #include <unistd.h>
 
 /**
- * main - prints all possible different combinations of three digits
- * Challenge: You can only use putchar 6 times in your code & asc order & smallest of three
+ * main - prints all possible different combinations of 3 digits
+ * Challenge: You can only use putchar 6 times in your cod...
  * Return: 0 if result is as expected else !0
  */
 
