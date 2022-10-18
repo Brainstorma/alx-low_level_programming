@@ -14,5 +14,5 @@ int add(int fn, int sn)
 
 	total = fn + sn;
 
-	return (total)
+	return (total);
 }
