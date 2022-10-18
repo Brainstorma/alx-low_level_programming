@@ -3,7 +3,6 @@
 /**
  * main - computes and prints the sum of all the multiples
  * Challenge: below 1024
- * @multiples: number of the times table
  * Return: 0 for expected output
 **/
 
