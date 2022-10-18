@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * main - prints the alphabet in lowecase followed by a new line
+ * print_alphabet - prints the alphabet in lowecase followed by a new line
  * Challenge: You can only use _putchar twice in your code
  * Return: void
  */
 
-void print_alphabet(void)
+void print_alphabet(void) //def in the main.h
 
 {
 	int az;
