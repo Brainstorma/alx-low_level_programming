@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void print_alphabet(void) //def in the main.h
+void print_alphabet(void) 
 
 {
 	int az;
