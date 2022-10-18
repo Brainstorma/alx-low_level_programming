@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _islower - a function that checks for lowercase character
+ * _isalpha - a function that checks for lowercase character
  * Challenge: Returns 1 if c is lower(c)ase
  *@c: single character input
  * Return: 1 if result is as expected else 0
