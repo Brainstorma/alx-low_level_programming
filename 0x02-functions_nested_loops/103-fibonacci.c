@@ -2,7 +2,7 @@
 
 /**
  * main - finds and prints the sum of the even-valued terms
- * Challenge: comments 
+ * Challenge: comments
  * Return: 0 for expected output
 **/
 
