@@ -2,7 +2,7 @@
 
 /**
  * main - Prints the first 50 fibonacci numbers
- * Challenge: comments 
+ * challenge: comments
  * Return: 0 for expected output
 **/
 
