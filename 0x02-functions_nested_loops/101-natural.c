@@ -3,13 +3,13 @@
 /**
  * main - computes and prints the sum of all the multiples
  * Challenge: below 1024
- * @n: number of the times table
+ * @multiples: number of the times table
  * Return: 0 for expected output
 **/
 
 int main(void)
 {
-	int fn, Ln, total;
+	int fn, Ln, multiples;
 
 	Ln = 1024;
 	multiples = 0;
