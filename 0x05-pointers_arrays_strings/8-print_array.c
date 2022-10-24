@@ -3,8 +3,7 @@
 
 /**
  * print_array - a function that prints n elements of an array
- * Challenge: Numbers should be displayed in the same order they are stored in array.
- * @*a: array name
+ * @a: array name
  * @n: is the number of elements of the array to be printed
  * Return: a and n inputs
  **/
