@@ -3,7 +3,7 @@
 /**
  * _atoi - converts a string to an integer
  * @s: string to be converted
- * challenge: Long is prohibited 
+ * challenge: Long is prohibited
  * Return: the int converted from the string
  **/
 
