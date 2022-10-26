@@ -4,10 +4,12 @@ char *add_strings(char *n1, char *n2, char *r, int rdex);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
 /**
- * add_strings - Adds the numbers stored in two strings.
- * @n1: The string containing the first number to be added.
- * @n2: The string containing the second number to be added.
+ * add_strings - Adds two strings.
+ * infinite_add - Adds two numbers.
+ * @n1: The first number
+ * @n2: The second number
  * @r: The buffer to store the result.
+ * @size_r: The buffer size.
  * @rdex: The current index of the buffer.
  * Return: 0 for expected outcome.
  **/
@@ -52,11 +54,7 @@ char *add_strings(char *n1, char *n2, char *r, int rdex)
 
 /**
  * infinite_add - Adds two numbers.
- * @n1: The first number
- * @n2: The second number
- * @r: The buffer to store the result.
  * @size_r: The buffer size.
- * Return: 0 for expected outcome
  **/
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
