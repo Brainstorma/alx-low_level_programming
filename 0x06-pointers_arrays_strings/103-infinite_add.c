@@ -52,11 +52,6 @@ char *add_strings(char *n1, char *n2, char *r, int rdex)
 	return (r + rdex + 1);
 }
 
-/**
- * infinite_add - Adds two numbers.
- * @size_r: The buffer size.
- **/
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int 	fn, fnlen = 0, snlen = 0;
