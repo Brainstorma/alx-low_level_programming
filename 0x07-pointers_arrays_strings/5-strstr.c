@@ -9,17 +9,20 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int fint, sint;
-
-	for (fint = 0; haystack[fint] != '\0'; fint++)
+	for (; *haystack != '\0'; haystack++)
 	{
-		for (sint = 0; needle[sint] != '\0'; sint++)
+		char *hay = haystack;
+		char *ned = needle;
+
+		while (*hay == *ned && *ned != '\0')
 		{
-			if (haystack[fint + sint] != needle[sint])
-				break;
+			hay++;
+			ned++;
 		}
-		if (!needle[sint])
-			return (&haystack[fint]);
+
+		if (*ned == '\0')
+			return (haystack);
 	}
+
 	return (NULL);
 }
