@@ -1,22 +1,7 @@
 #include "main.h"
 
 int sqr_root(int base, int rut);
-/**
- * sqr_root - Finds the natural square root of an inputted number.
- * @base: The number to find the square root of.
- * @rut: The root to be tested.
- * Return: sqr root
- **/
-
-int sqr_root(int base, int rut)
-{
-	if (rut < 1)
-		return (-1);
-	else if (rut * rut == base)
-		return (rut);
-	else
-		return (sqr_root(base, rut + 1));
-}
+int _sqrt_recursion(int n);
 
 /**
  * _sqrt_recursion - Returns the natural square root of a number.
@@ -35,4 +20,21 @@ int _sqrt_recursion(int n)
 		return (1);
 
 	return (sqr_root(n, rut));
+}
+/**
+ * sqr_root - Finds the natural square root of an inputted number.
+ * @base: The number to find the square root of.
+ * @rut: The root to be tested.
+ * Return: sqr root
+ **/
+
+int sqr_root(int base, int rut)
+{
+	if ((rut * rut) == base)
+		return (rut);
+
+	if (rut == base / 2)
+		return (-1);
+
+	return (sqr_root(base, rut + 1));
 }
