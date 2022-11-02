@@ -15,7 +15,7 @@ int sqr_root(int base, int rut)
 	else if (rut * rut == base)
 		return (rut);
 	else
-		return (sqr_root(base, rut - 1));
+		return (sqr_root(base, rut + 1));
 }
 
 /**
@@ -30,6 +30,9 @@ int _sqrt_recursion(int n)
 
 	if (n < 0)
 		return (-1);
-	else
-		return (sqr_root(rut, (rut + 1) / 2));
+
+	if (n == 1)
+		return (1);
+
+	return (sqr_root(n, rut));
 }
