@@ -1,9 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
- * main - Program that adds numbers
+ * main - Program that takes in all integer arguments and returns the sum
  * @argc: Number of command line arguments
  * @argv: array of arguents
  * Return: 0 for expected results
@@ -11,21 +13,32 @@
 
 int main(int argc, char *argv[])
 {
-        int fnum, sadd = 0;
+	int fnum, snum, len, adds;
+	char *ptr;
 
-        if (argc < 1)
-                return (0);
+	if (argc < 2)
+	printf("0\n");
+	else
+	{
+		adds = 0;
+		for (fnum = 1; fnum < argc; fnum++)
+		{
+			ptr = argv[fnum];
+			len = strlen(ptr);
 
-        for (fnum = 1; fnum < argc; fnum++)
-        {
-                if (!atoi(argv[fnum]))
-                {
-                        printf("%s\n", "Error");
-                        return (1);
-                }
-                sadd += atoi(argv[fnum]);
-        }
-        printf("%d\n", sadd);
+			for (snum = 0; snum < len; snum++)
+			{
+				if (isdigit(*(ptr + snum)) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
 
-        return (0);
+			adds += atoi(argv[fnum]);
+		}
+
+		printf("%d\n", adds);
+	}
+	return (0);
 }
