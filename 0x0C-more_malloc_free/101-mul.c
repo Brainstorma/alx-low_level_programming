@@ -5,17 +5,17 @@
 /**
  * x_digit - checks if test string contains test non-digit char
  * @s: string to be evaluated
- * Return: 0 if test non-digit is found, 1 otherwise
+ * Return: 0 if test non-digit is found
  **/
 int x_digit(char *s)
 {
-	int digitx = 0;
+	int dx = 0;
 
-	while (s[digitx])
+	while (s[dx])
 	{
-		if (s[digitx] < '0' || s[digitx] > '9')
+		if (s[dx] < '0' || s[dx] > '9')
 			return (0);
-		digitx++;
+		dx++;
 	}
 	return (1);
 }
@@ -54,39 +54,39 @@ void errors(void)
 int main(int argc, char *argv[])
 {
 	char *beta, *demo;
-	int flenstr, slenstr, allenstr, digitx, hold, digit1, digit0, *multiN, test = 0;
+	int fs, slen, tlen, dx, hd, d1, d0, *multiN, test = 0;
 
 	beta = argv[1], demo = argv[2];
 	if (argc != 3 || !x_digit(beta) || !x_digit(demo))
 		errors();
-	flenstr = _strlen(beta);
-	slenstr = _strlen(demo);
-	allenstr = flenstr + slenstr + 1;
+	fs = _strlen(beta);
+	slen = _strlen(demo);
+	allenstr = fs + slen + 1;
 	multiN = malloc(sizeof(int) * allenstr);
 	if (!multiN)
 		return (1);
-	for (digitx = 0; digitx <= flenstr + slenstr; digitx++)
-		multiN[digitx] = 0;
-	for (flenstr = flenstr - 1; flenstr >= 0; flenstr--)
+	for (dx = 0; dx <= fs + slen; dx++)
+		multiN[dx] = 0;
+	for (fs = fs - 1; fs >= 0; fs--)
 	{
-		digit1 = beta[flenstr] - '0';
-		hold = 0;
-		for (slenstr = _strlen(demo) - 1; slenstr >= 0; slenstr--)
+		d1 = beta[fs] - '0';
+		hd = 0;
+		for (slen = _strlen(demo) - 1; slen >= 0; slen--)
 		{
-			digit0 = demo[slenstr] - '0';
-			hold += multiN[flenstr + slenstr + 1] + (digit1 * digit0);
-			multiN[flenstr + slenstr + 1] = hold % 10;
-			hold /= 10;
+			d0 = demo[slen] - '0';
+			hd += multiN[fs + slen + 1] + (d1 * d0);
+			multiN[fs + slen + 1] = hd % 10;
+			hd /= 10;
 		}
-		if (hold > 0)
-			multiN[flenstr + slenstr + 1] += hold;
+		if (hd > 0)
+			multiN[fs + slen + 1] += hd;
 	}
-	for (digitx = 0; digitx < allenstr - 1; digitx++)
+	for (dx = 0; dx < allenstr - 1; dx++)
 	{
-		if (multiN[digitx])
+		if (multiN[dx])
 			test = 1;
 		if (test)
-			_putchar(multiN[digitx] + '0');
+			_putchar(multiN[dx] + '0');
 	}
 	if (!test)
 		_putchar('0');
