@@ -3,10 +3,10 @@
 
 /**
  * File: 3-function_like_macro.h
- * @x: absolute number
- * Desc - absolute value of a number x.
+ * @x: abs num
+ * Desc - abs value of a num x
  **/
 
-#define ABS(x) ((x) < 0 ? (-x) : (x))
+#define ABS(x) ((x) < (0) ? (-x) : (x))
 
 #endif
