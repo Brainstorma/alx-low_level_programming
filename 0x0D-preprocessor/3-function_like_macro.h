@@ -3,7 +3,8 @@
 
 /**
  * File: 3-function_like_macro.h
- * Description - abs value of a num x
+ * @x: absolute number
+ * ABS(x) - absolute value of a number x.
  **/
 
 #define ABS(x) ((x) < (0) ? (-x) : (x))
