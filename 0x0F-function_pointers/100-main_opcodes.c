@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * Desc - Prints the opcodes of itself.
+ * main - func that prints the opcodes of itself.
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  * Return: 0 for expected results
