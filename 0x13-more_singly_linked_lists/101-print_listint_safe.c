@@ -1,36 +1,85 @@
 #include "lists.h"
+#include <stdio.h>
+
+size_t looped_listint_len(const listint_t *head);
+size_t print_listint_safe(const listint_t *head);
+
 /**
- * print_listint_safe - function that prints a linked list with a loop safely.
- * @head: pointer to the 1st node of the linked list
- * Return: new_node
- */
+ * looped_listint_len - Counts the number of unique nodes
+ * @head: A pointer to the head of the listint_t to check.
+ * Return: list looped Otherwise 1
+ **/
+
+size_t looped_listint_len(const listint_t *head)
+{
+	const listint_t *floop, *flash;
+	size_t nodes = 1;
+
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	floop = head->next;
+	flash = (head->next)->next;
+
+	while (flash)
+	{
+		if (floop == flash)
+		{
+			floop = head;
+			while (floop != flash)
+			{
+				nodes++;
+				floop = floop->next;
+				flash = flash->next;
+			}
+
+			floop = floop->next;
+			while (floop != flash)
+			{
+				nodes++;
+				floop = floop->next;
+			}
+
+			return (nodes);
+		}
+
+		floop = floop->next;
+		flash = (flash->next)->next;
+	}
+
+	return (0);
+}
+
+/**
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
+ * Return: nodes list.
+ **/
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *tmp_n = NULL;
-	const listint_t *l_n = NULL;
-	size_t counter = 0;
-	size_t new_n;
+	size_t new, plist = 0;
 
-	tmp_n = head;
-	while (tmp_n)
+	new = looped_listint_len(head);
+
+	if (new == 0)
 	{
-		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
-		counter++;
-		tmp_n = tmp_n->next;
-		l_n = head;
-		new_n = 0;
-		while (new_n < counter)
+		for (; head != NULL; new++)
 		{
-			if (tmp_n == l_n)
-			{
-				printf("-> [%p] %d\n", (void *)tmp_n, tmp_n->n);
-				return (counter);
-			}
-			l_n = l_n->next;
-			new_n++;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
-		if (!head)
-			exit(98);
 	}
-	return (counter);
+
+	else
+	{
+		for (plist = 0; plist < new; plist++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
+	}
+
+	return (new);
 }
