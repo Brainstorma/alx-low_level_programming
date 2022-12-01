@@ -8,28 +8,18 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int biuns = 0;
-	unsigned int fint = 0;
+	unsigned int num = 0;
+	int len = 0;
 
-	if (b == NULL)
+	if (b[len] == '\0')
 		return (0);
 
-	while (b[fint] != '\0')
+	while ((b[len] == '0') || (b[len] == '1'))
 	{
-		if (b[fint] == '1')
-		{
-			biuns = (biuns * 2) + 1;
-			fint++;
-		}
-		else if (b[fint] == '0')
-		{
-			biuns = (biuns * 2);
-			fint++;
-		}
-		else
-			return (0);
-
+		num <<= 1;
+		num += b[len] - '0';
+		len++;
 	}
 
-	return (biuns);
+	return (num);
 }
