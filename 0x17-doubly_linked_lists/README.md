@@ -1,34 +1,141 @@
-# 0x17 - C - Doubly Linked Lists
+# 0x17. C - Doubly Linked Lists
 
-This directory contains scripts related to doubly linked lists in the C programming language.
+## Overview
 
-## Goals
+This project focuses on introducing and working with doubly linked lists in C. This repo provides a task and a template file for each task that must be completed. Additionally, the project provides a header file `lists.h` that contains the library of functions used to manipulate the doubly linked lists. 
 
-The primary goal of this directory is to provide examples of how to use doubly linked lists in C programming. The examples provided in this directory should help you understand how to implement doubly linked lists in C programming and how to use them effectively.
+## Requirements
 
-## Files
+* Allowed editors: `vi`, `vim`, `emacs`
+* All files will be compiled on Ubuntu 14.04 LTS
+* Programs and functions will be compiled with `gcc 4.8.4` using the flags `-Wall` `-Werror` `-Wextra` and `-pedantic`
+* Code should use the Betty style
+* You are not allowed to use global variables
+* No more than 5 functions per file
+* You are allowed to use the C standard library
 
-This directory contains the following files:
+## Compilation
 
-**lists.h** – This header file contains the definitions and functions for creating and manipulating doubly linked lists in C programming.
+All your files will be compiled this way:
 
-**0-print_dlistint.c** – This file contains a function that prints all elements of a doubly linked list.
+```bash
+gcc -Wall -Werror -Wextra -pedantic *.c -o executable_name
+```
 
-**1-dlistint_len.c** – This file contains a function that returns the length of a doubly linked list.
+## Tasks
 
-**2-add_dnodeint.c** – This file contains a function that adds a new node at the beginning of a doubly linked list.
+### 0. Print List
 
-**3-add_dnodeint_end.c** – This file contains a function that adds a new node at the end of a doubly linked list.
+Write a function that prints all the elements of a `dlistint_t` list.
 
-**4-free_dlistint.c** – This file contains a function that frees a doubly linked list.
+* Prototype: `size_t print_dlistint(const dlistint_t *h);`
+* Return: the number of nodes
+* Format: see example
 
-**5-get_dnodeint.c** – This file contains a function that returns the nth node of a doubly linked list.
+```bash
+guillaume@ubuntu:~/0x17$ cat 0-main.c 
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
-**6-sum_dlistint.c** – This file contains a function that returns the sum of all data (n) of a doubly linked list.
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always EXIT_SUCCESS.
+ */
+int main(void)
+{
+    dlistint_t *head;
+    dlistint_t *new;
+    dlistint_t hello = {8, NULL, NULL};
+    size_t n;
 
-**7-insert_dnodeint.c** – This file contains a function that inserts a new node at a given position.
+    head = &hello;
+    new = malloc(sizeof(dlistint_t));
+    if (new == NULL)
+    {
+        dprintf(2, "Error: Can't malloc\n");
+        return (EXIT_FAILURE);
+    }
+    new->n = 9;
+    head->prev = new;
+    new->next = head;
+    new->prev = NULL;
+    head = new;
+    n = print_dlistint(head);
+    printf("-> %lu elements\n", n);
+    free(new);
+    return (EXIT_SUCCESS);
+}
+guillaume@ubuntu:~/0x17$ gcc -Wall -Werror -Wextra -pedantic 0-main.c 0-print_dlistint.c -o 0-list
+guillaume@ubuntu:~/0x17$ ./0-list 
+9
+8
+-> 2 elements
+guillaume@ubuntu:~/0x17$
+```
 
-**8-delete_dnodeint.c** – This file contains a function that deletes the node at a given index of a doubly linked list.
+### 1. List Length
+
+Write a function that returns the number of elements in a linked `dlistint_t` list.
+
+* Prototype: `size_t dlistint_len(const dlistint_t *h);`
+
+### 2. Add Node
+
+Write a function that adds a new node at the beginning of a `dlistint_t` list.
+
+* Prototype: `dlistint_t *add_dnodeint(dlistint_t **head, const int n);`
+* Return: the address of the new element, or `NULL` if it failed
+
+### 3. Add Node at the End
+
+Write a function that adds a new node at the end of a `dlistint_t` list.
+
+* Prototype: `dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);`
+* Return: the address of the new element, or `NULL` if it failed
+
+### 4. Free List
+
+Write a function that free a `dlistint_t` list.
+
+* Prototype: `void free_dlistint(dlistint_t *head);`
+
+### 5. Get Node at Index
+
+Write a function that returns the nth node of a `dlistint_t` linked list.
+
+* Prototype: `dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);`
+* where `index` is the index of the node, starting from `0`
+* if the node does not exist, return `NULL`
+
+### 6. Sum List
+
+Write a function that returns the sum of all the data (n) of a `dlistint_t` linked list.
+
+* Prototype: `int sum_dlistint(dlistint_t *head);`
+* if the list is empty, return `0`
+
+### 7. Insert at Index
+
+Write a function that inserts a new node at a given position.
+
+* Prototype: `dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);`
+* where `idx` is the index of the list where the new node should be added. `Index` starts at `0`
+* Returns: the address of the new node, or `NULL` if it failed
+
+### 8. Delete at Index
+
+Write a function that deletes the node at index `index` of a `dlistint_t` linked list.
+
+* Prototype: `int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);`
+* where `index` is the index of the node that should be deleted. Index starts at `0`
+* Returns: `1` if it succeeded, `-1` if it failed
+
+## Built With
+
+* C (GCC)
 
 ## Author
 
