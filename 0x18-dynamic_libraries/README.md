@@ -1,4 +1,4 @@
-*# 0x18 - Dynamic Libraries*
+# 0x18 - Dynamic Libraries
 
 ## Table of Contents 
 
