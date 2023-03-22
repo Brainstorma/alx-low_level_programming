@@ -66,11 +66,11 @@ When creating a Makefile, there are several best practices that you should follo
 
 ## Tasks
 
-- [0x1C. C - Makefiles](https://github.com/KatyaKalache/holbertonschool-low_level_programming/tree/main/0x1C-makefiles)
-- [1. Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/1-Makefile)
-- [2. Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/2-Makefile)
-- [3. Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/3-Makefile)
-- [4. A complete Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/4-Makefile)
-- [5. Island Perimeter](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/5-island_perimeter.py)
-- [6. make -f 100-Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/100-Makefile)
-- [7. Create a new Makefile](https://github.com/KatyaKalache/holbertonschool-low_level_programming/blob/main/0x1C-makefiles/101-Makefile)
+- [0x1C. C - Makefiles](0-Makefile)
+- [1. Makefile](1-Makefile)
+- [2. Makefile](2-Makefile)
+- [3. Makefile](3-Makefile)
+- [4. A complete Makefile](4-Makefile)
+- [5. Island Perimeter](5-island_perimeter.py)
+- [6. make -f 100-Makefile](100-Makefile)
+- [7. Create a new Makefile](101-Makefile)
